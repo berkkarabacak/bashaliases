@@ -1,6 +1,127 @@
 
+
+
+alias ll='ls -la' ## Show hidden files ##
+alias la='ls -A'
+alias l='ls -CF'
+alias c='clear'
+alias cl="clear;ls;pwd"
+
+## get rid of command not found ##
+alias cd..='cd ..' ## a quick way to get out of current directory ##
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+# distro specific - Debian / Ubuntu and friends #
+# install with apt-get
+alias apt-get="sudo apt-get --yes" # get on one command
+alias update='sudo apt-get update && sudo apt-get upgrade'
+
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+
+
+# Make some of the file manipulation programs verbose
+alias mv="mv -v"
+alias rm="rm -vi"
+alias cp="cp -v"
+
+# Prints disk usage in human readable form
+alias d="du -sh"
+
+alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo ' ##Make and enter inside a directory
+alias mkdir='mkdir -pv'
+alias untar='tar -zxvf '
+alias wget='wget -c ' ##dWant to download something but be able to resume if something goes wrong?
+alias speed='speedtest-cli --server 2406 --simple' ##download Speedtest-cli 
+alias ipe='curl ipinfo.io/ip' ##external IP address 
+alias ipi='ipconfig getifaddr en0' ##internal IP address
+alias hs='history | grep'
+
+
+
+# Stop after sending count ECHO_REQUEST packets #
+alias ping='ping -c 5'
+# Do not wait interval 1 second, go fast #
+alias fastping='ping -c 100 -s.2'
+
+# become root #
+alias root='sudo -i'
+alias su='sudo -i'
+
+# reboot / halt / poweroff
+alias reboot='sudo /sbin/reboot'
+alias poweroff='sudo /sbin/poweroff'
+alias halt='sudo /sbin/halt'
+alias shutdown='sudo /sbin/shutdown'
+
+
+## pass options to free ##
+alias meminfo='free -m -l -t' ## get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10' ## get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10' ## Get server cpu info ##
+alias cpuinfo='lscpu' ## older system use /proc/cpuinfo ##
+##alias cpuinfo='less /proc/cpuinfo' ## ## get GPU ram on desktop / laptop##
+alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
+
+function myip()
+{
+    extIp=$(dig +short myip.opendns.com @resolver1.opendns.com)
+
+    printf "Wireless IP: "
+    MY_IP=$(/sbin/ifconfig wlp4s0 | awk '/inet/ { print $2 } ' |
+      sed -e s/addr://)
+    echo ${MY_IP:-"Not connected"}
+
+
+    printf "Wired IP: "
+    MY_IP=$(/sbin/ifconfig enp0s25 | awk '/inet/ { print $2 } ' |
+      sed -e s/addr://)
+    echo ${MY_IP:-"Not connected"}
+
+    echo ""
+    echo "WAN IP: $extIp"
+
+}
+
+## GIT GIT GIT
+alias gd="git diff"
+alias gc="git clone"
+alias gbd="git branch -D"
+alias gca="git commit -a -m"
+alias gpt="git push --tags"
+alias gp="git push"
+alias gpr="git pull-request"
+alias grh="git reset --hard"
+alias gb="git branch"
+alias gcob="git checkout -b"
+alias gco="git checkout"
+alias gba="git branch -a"
+alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
+alias g='git'
+alias gi='git init'
+alias gs='git status'
+alias ga='git add -A .'
+alias grh="git reset --hard"
+alias push='git push'
+
 function lazygit() {
     git add .
     git commit -a -m "$1"
     git push
 }
+
+function getmicro() {
+   curl https://getmic.ro | bash
+   sudo cp ./micro /usr/bin
+}
+
