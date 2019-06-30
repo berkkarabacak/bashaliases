@@ -118,4 +118,30 @@ function getmicro() {
 
 alias m='micro -scrollbar=true'
 
+alias d='docker'
+alias datt='docker attach'
+alias dcb='docker-compose build'
+alias dclogs='docker-compose logs'
+alias dcu='docker-compose up'
+alias ddiff='docker diff'
+alias dimg='docker images'
+alias dins='docker inspect'
+alias dps='docker ps'
+alias drm='docker rm'
+alias drmi='docker rmi'
+alias drun='docker run'
+alias dstart='docker start'
+alias dstop='docker stop'
+
+# Run a bash shell in the specified container.
+#
+dbash() {
+  if [ $# -ne 1 ]; then
+    echo "Usage: $FUNCNAME CONTAINER_ID"
+    return 1
+  fi
+
+  docker exec -it $1 /bin/bash
+}
+
 
