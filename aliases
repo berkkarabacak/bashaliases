@@ -131,10 +131,6 @@ alias drm='docker rm'
 alias drmi='docker rmi'
 alias drun='docker run'
 
-alias jiralog='tail -f -n 300 /var/atlassian/application-data/jira/log/atlassian-jira.log'
-alias jirashutdown='/opt/atlassian/jira/bin/shutdown.sh'
-alias jirastartup='/opt/atlassian/jira/bin/startup.sh'
-
 alias dstart='docker start'
 alias dstop='docker stop'
 
@@ -148,5 +144,15 @@ dbash() {
 
   docker exec -it $1 /bin/bash
 }
+
+
+function ta() {
+    tail -f -n 300 $1
+}
+
+alias jiralog='tail -f -n 300 /var/atlassian/application-data/jira/log/atlassian-jira.log'
+alias jirashutdown='/opt/atlassian/jira/bin/shutdown.sh'
+alias jirastartup='/opt/atlassian/jira/bin/startup.sh'
+
 
 
