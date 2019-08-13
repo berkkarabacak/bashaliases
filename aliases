@@ -150,9 +150,21 @@ function ta() {
     tail -f -n 300 $1
 }
 
-alias jiralog='tail -f -n 300 /var/atlassian/application-data/jira/log/atlassian-jira.log'
+alias jiralog='tail -f -n 300 /opt/atlassian/jira/logs/catalina.out'
 alias jirashutdown='/opt/atlassian/jira/bin/shutdown.sh'
 alias jirastartup='/opt/atlassian/jira/bin/startup.sh'
+
+alias confluencelog='tail -f -n 300 /opt/atlassian/confluence/logs/catalina.out'
+alias confluenceshutdown='/opt/atlassian/confluence/bin/shutdown.sh'
+alias confluencestartup='/opt/atlassian/confluence/bin/startup.sh'
+
+alias bamboolog='tail -f -n 300 /opt/atlassian/bamboo/logs/catalina.out'
+alias bambooshutdown='/opt/atlassian/bamboo/bin/shutdown.sh'
+alias bamboostartup='/opt/atlassian/bamboo/bin/startup.sh'
+
+alias bitbucketlog='tail -f -n 300 /opt/atlassian/bitbucket/logs/catalina.out'
+alias bitbucketshutdown='/opt/atlassian/bitbucket/bin/shutdown.sh'
+alias bitbucketstartup='/opt/atlassian/bitbucket/bin/startup.sh'
 
 
 
