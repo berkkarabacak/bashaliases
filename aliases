@@ -2,6 +2,7 @@ alias ll='ls -la' ## Show hidden files ##
 alias la='ls -A'
 alias l='ls -CF'
 alias c='clear'
+alias sctl='systemctl'
 alias cl="clear;ls;pwd"
 
 ## get rid of command not found ##
@@ -110,8 +111,8 @@ function lazygit() {
     git push
 }
 
-
-function p() {
+#Find Out Which Port Number a Process is Listening on
+function sps() {
     sudo netstat -ltnp | grep -w ':$1'
 }
 
