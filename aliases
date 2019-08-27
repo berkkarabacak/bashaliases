@@ -68,7 +68,6 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 function myip()
 {
     extIp=$(dig +short myip.opendns.com @resolver1.opendns.com)
-
     printf "Wireless IP: "
     MY_IP=$(/sbin/ifconfig wlp4s0 | awk '/inet/ { print $2 } ' |
       sed -e s/addr://)
@@ -110,6 +109,12 @@ function lazygit() {
     git commit -a -m "$1"
     git push
 }
+
+
+function p() {
+    sudo netstat -ltnp | grep -w ':$1'
+}
+
 
 function getmicro() {
    curl https://getmic.ro | bash
