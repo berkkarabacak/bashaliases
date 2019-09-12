@@ -2,8 +2,18 @@ alias ll='ls -la' ## Show hidden files ##
 alias la='ls -A'
 alias l='ls -CF'
 alias c='clear'
-alias sctl='systemctl'
 alias cl="clear;ls;pwd"
+
+# systemctl alisases
+alias sc=systemctl
+alias scst='sudo systemctl start'
+alias scsp='sudo systemctl stop'
+alias scrl='sudo systemctl reload'
+alias scrt='sudo systemctl restart'
+alias sce='sudo systemctl enable'
+alias scd='sudo systemctl disable'
+alias scs='systemctl status'
+alias scsw='systemctl show'
 
 ## get rid of command not found ##
 alias cd..='cd ..' ## a quick way to get out of current directory ##
