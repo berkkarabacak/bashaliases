@@ -132,7 +132,7 @@ function getmicro() {
    sudo cp ./micro /usr/bin
 }
 
-alias m='micro -scrollbar=true'
+alias tt='tilde'
 
 alias d='docker'
 alias datt='docker attach'
