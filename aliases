@@ -36,7 +36,7 @@ alias fgrep='fgrep --color=auto'
 
 # Make some of the file manipulation programs verbose
 alias mv="mv -v"
-alias rm="rm -rvi"
+alias rm="rm -rfvi"
 alias cp="cp -v"
 
 # Prints disk usage in human readable form
