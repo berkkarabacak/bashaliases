@@ -1,8 +1,11 @@
+alias  e='exa --tree --level=1 --long --sort=newest --header'
+alias e2='exa --tree --level=2 --long --sort=newest --header'
+alias e3='exa --tree --level=3 --long --sort=newest --header'
+
 alias ll='ls -la' ## Show hidden files ##
 alias la='ls -A'
 alias l='ls -CF'
-alias c='clear'
-alias cl="clear;ls;pwd"
+alias cl="clear"
 
 # systemctl alisases
 alias sc=systemctl
@@ -176,6 +179,3 @@ alias bamboostartup='sudo /opt/atlassian/bamboo/bin/startup.sh'
 alias bitbucketlog='tail -f -n 300 /opt/atlassian/bitbucket/logs/catalina.out'
 alias bitbucketshutdown='sudo /opt/atlassian/bitbucket/bin/shutdown.sh'
 alias bitbucketstartup='sudo /opt/atlassian/bitbucket/bin/startup.sh'
-
-
-
