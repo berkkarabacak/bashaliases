@@ -3,7 +3,7 @@ alias e2='exa --tree --level=2 --long --sort=newest --header'
 alias e3='exa --tree --level=3 --long --sort=newest --header'
 
 alias ll='exa --tree --level=1 --long --sort=newest --header'
-alias l= 'exa --tree --level=1 --long --sort=newest --header
+alias l='exa --tree --level=1 --long --sort=newest --header'
 alias cl="clear"
 
 # systemctl alisases
