@@ -130,6 +130,7 @@ function sps() {
 }
 
 alias tt='tilde -b'
+alias v='vim -y'
 
 alias d='docker'
 alias datt='docker attach'
