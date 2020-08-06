@@ -117,7 +117,7 @@ alias ga='git add -A .'
 alias grh="git reset --hard"
 alias push='git push'
 
-function lazygit() {
+function lg() {
     git add .
     git commit -a -m "$1"
     git push
