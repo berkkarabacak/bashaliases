@@ -96,27 +96,6 @@ function myip()
     echo "WAN IP: $extIp"
 }
 
-## GIT GIT GIT
-alias gd="git diff"
-alias gc="git clone"
-alias gbd="git branch -D"
-alias gca="git commit -a -m"
-alias gpt="git push --tags"
-alias gp="git push"
-alias gpr="git pull-request"
-alias grh="git reset --hard"
-alias gb="git branch"
-alias gcob="git checkout -b"
-alias gco="git checkout"
-alias gba="git branch -a"
-alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
-alias g='git'
-alias gi='git init'
-alias gs='git status'
-alias ga='git add -A .'
-alias grh="git reset --hard"
-alias push='git push'
-
 function lg() {
     git add .
     git commit -a -m "$1"
@@ -124,12 +103,9 @@ function lg() {
 }
 
 #Find Out Which Port Number a Process is Listening on
-function sps() {
+function portlisten() {
     sudo netstat -ltnp | grep -w ':$1'
 }
-
-alias tt='tilde -b'
-alias v='vim -y'
 
 alias d='docker'
 alias datt='docker attach'
@@ -164,6 +140,12 @@ function ta() {
     tail -f -n 300 $1
 }
 
+function lss() {
+    less +G +F $1
+}
+
+
+
 alias jiralog='tail -f -n 300 /opt/atlassian/jira/logs/catalina.out'
 alias jirashutdown='sudo /opt/atlassian/jira/bin/shutdown.sh'
 alias jirastartup='sudo /opt/atlassian/jira/bin/startup.sh'
@@ -179,3 +161,26 @@ alias bamboostartup='sudo /opt/atlassian/bamboo/bin/startup.sh'
 alias bitbucketlog='tail -f -n 300 /opt/atlassian/bitbucket/logs/catalina.out'
 alias bitbucketshutdown='sudo /opt/atlassian/bitbucket/bin/shutdown.sh'
 alias bitbucketstartup='sudo /opt/atlassian/bitbucket/bin/startup.sh'
+
+
+## GIT GIT GIT
+alias gd="git diff"
+alias singlecommit="git reset $(git commit-tree HEAD^{tree} -m "Initial commit")"
+alias gc="git clone"
+alias gbd="git branch -D"
+alias gca="git commit -a -m"
+alias gpt="git push --tags"
+alias gp="git push"
+alias gpr="git pull-request"
+alias grh="git reset --hard"
+alias gb="git branch"
+alias gcob="git checkout -b"
+alias gco="git checkout"
+alias gba="git branch -a"
+alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
+alias g='git'
+alias gi='git init'
+alias gs='git status'
+alias ga='git add -A .'
+alias grh="git reset --hard"
+alias push='git push'
